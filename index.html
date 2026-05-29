@@ -10,11 +10,10 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'DM Sans',sans-serif;background:#f7f6f3;color:#1a1a1a;font-size:14px;overflow:hidden;height:100vh}
 button{font-family:'DM Sans',sans-serif;cursor:pointer}
-input{font-family:'DM Sans',sans-serif}
+input,select,textarea{font-family:'DM Sans',sans-serif}
 .serif{font-family:'Playfair Display',serif}
 .app{display:flex;height:100vh;overflow:hidden}
 
-/* SIDEBAR */
 .sidebar{width:230px;background:#fff;border-right:.5px solid #e8e8e4;display:flex;flex-direction:column;flex-shrink:0}
 .logo{padding:22px 20px 18px;border-bottom:.5px solid #f0f0ec}
 .logo-main{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:#1a1a1a}
@@ -30,12 +29,11 @@ input{font-family:'DM Sans',sans-serif}
 .user-area{padding:14px 16px;border-top:.5px solid #f0f0ec}
 .user-avatar{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#d4a853,#8b5e3c);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;flex-shrink:0}
 
-/* MAIN */
 .main{flex:1;display:flex;flex-direction:column;overflow:hidden}
 .topbar{background:#fff;border-bottom:.5px solid #e8e8e4;padding:14px 28px;display:flex;align-items:center;gap:16px}
 .topbar h1{font-size:16px;font-weight:700;font-family:'Playfair Display',serif;flex:1}
 .search-wrap{position:relative}
-.search-wrap i{position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:14px;color:#aaa}
+.search-wrap i{position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:14px;color:#aaa;pointer-events:none}
 .search-input{padding-left:34px;padding-right:12px;height:34px;border-radius:8px;border:.5px solid #e8e8e4;font-size:13px;outline:none;width:200px;background:#fafaf8}
 .filterbar{background:#fff;border-bottom:.5px solid #e8e8e4;padding:10px 28px;display:flex;gap:6px;flex-wrap:wrap;align-items:center}
 .filter-btn{font-size:12px;padding:5px 14px;border-radius:20px;border:.5px solid #e8e8e4;background:transparent;color:#666;transition:all .15s}
@@ -45,7 +43,6 @@ input{font-family:'DM Sans',sans-serif}
 .divider{width:1px;height:20px;background:#eee;margin:0 6px;flex-shrink:0}
 .content{flex:1;overflow-y:auto;padding:24px 28px}
 
-/* CARDS */
 .stat-grid{display:grid;gap:14px;margin-bottom:24px}
 .g4{grid-template-columns:repeat(4,1fr)}
 .g5{grid-template-columns:repeat(5,1fr)}
@@ -54,7 +51,6 @@ input{font-family:'DM Sans',sans-serif}
 .stat-val{font-size:28px;font-weight:700;font-family:'Playfair Display',serif;line-height:1}
 .stat-sub{font-size:11px;color:#bbb;margin-top:6px}
 
-/* TABLE */
 .table-card{background:#fff;border-radius:14px;border:.5px solid #e8e8e4;overflow:hidden;margin-bottom:20px}
 .table-header{padding:14px 18px;border-bottom:.5px solid #eee;font-weight:600;font-size:14px;display:flex;align-items:center;gap:8px}
 .tbl{width:100%;border-collapse:collapse}
@@ -62,9 +58,9 @@ input{font-family:'DM Sans',sans-serif}
 .tbl td{padding:12px 16px;border-bottom:.5px solid #f5f5f3;vertical-align:middle}
 .tbl tr:last-child td{border-bottom:none}
 .tbl tbody tr:hover td{background:#fafaf8}
+.tbl tbody tr{cursor:pointer;transition:background .15s}
 .tbl-scroll{overflow-x:auto}
 
-/* BADGES */
 .badge{display:inline-block;font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;white-space:nowrap}
 .b-green{background:#e6f4ea;color:#1e7e34}
 .b-amber{background:#fff3cd;color:#856404}
@@ -75,28 +71,23 @@ input{font-family:'DM Sans',sans-serif}
 .b-gray{background:#f0f0ec;color:#666}
 .b-sm{font-size:10px;padding:2px 8px}
 
-/* PLANNER BADGE */
 .planner-chip{display:flex;align-items:center;gap:6px}
 .planner-dot{border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;letter-spacing:.03em;flex-shrink:0}
 
-/* PROGRESS */
 .prog-wrap{display:flex;align-items:center;gap:6px}
 .prog-bar{height:4px;background:#f0f0f0;border-radius:4px;overflow:hidden;width:70px}
 .prog-fill{height:100%;border-radius:4px}
 
-/* DATE BOX */
 .date-box{width:44px;height:44px;border-radius:10px;background:#f7f6f3;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0}
 .date-day{font-size:16px;font-weight:700;line-height:1;font-family:'Playfair Display',serif}
 .date-mon{font-size:9px;color:#aaa;text-transform:uppercase}
 
-/* EXPAND ROW */
 .expand-row{cursor:pointer;transition:background .15s}
 .expand-row:hover{background:#fafaf8}
 .expand-detail{background:#fafaf8;border-top:.5px solid #f0f0ec;padding:14px 18px 16px}
 .detail-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
 .detail-label{font-size:10px;color:#aaa;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
 
-/* DASHBOARD */
 .dash-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
 .upcoming-item{display:flex;align-items:center;gap:12px;padding:10px 18px;border-bottom:.5px solid #f5f5f3}
 .upcoming-item:last-child{border-bottom:none}
@@ -106,40 +97,53 @@ input{font-family:'DM Sans',sans-serif}
 .destino-chips{padding:18px;display:flex;gap:12px;flex-wrap:wrap}
 .destino-chip{background:#fafaf8;border-radius:12px;border:.5px solid #eee;padding:12px 18px;text-align:center}
 
-/* URGENTE SECTION */
-.urgente-section{margin-bottom:24px}
 .urgente-card{background:#fff;border-radius:14px;border:1.5px solid #fde8e8;overflow:hidden}
 .urgente-row{display:flex;gap:14px;padding:14px 18px;border-bottom:.5px solid #f5f5f3;align-items:flex-start}
 .urgente-row:last-child{border-bottom:none}
-.urgente-date-box{width:44px;height:44px;border-radius:10px;background:#fde8e8;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:1000;display:flex;align-items:center;justify-content:center;padding:20px}
+.modal{background:#fff;border-radius:20px;width:100%;max-width:680px;max-height:90vh;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,.2)}
+.modal-header{padding:20px 24px;border-bottom:.5px solid #eee;display:flex;align-items:center;gap:12px}
+.modal-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;flex:1}
+.modal-close{width:32px;height:32px;border-radius:50%;border:none;background:#f5f5f3;display:flex;align-items:center;justify-content:center;font-size:16px;color:#666;cursor:pointer}
+.modal-close:hover{background:#eee}
+.modal-body{padding:24px;overflow-y:auto;flex:1}
+.modal-footer{padding:16px 24px;border-top:.5px solid #eee;display:flex;gap:10px;justify-content:flex-end}
+
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group.full{grid-column:1/-1}
+.form-label{font-size:11px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:.06em}
+.form-input{height:38px;border-radius:8px;border:.5px solid #e8e8e4;padding:0 12px;font-size:13px;outline:none;background:#fafaf8;transition:border .15s}
+.form-input:focus{border-color:#8b7355;background:#fff}
+.form-select{height:38px;border-radius:8px;border:.5px solid #e8e8e4;padding:0 12px;font-size:13px;outline:none;background:#fafaf8;appearance:none;cursor:pointer}
+.form-select:focus{border-color:#8b7355}
+.form-textarea{border-radius:8px;border:.5px solid #e8e8e4;padding:10px 12px;font-size:13px;outline:none;background:#fafaf8;resize:vertical;min-height:70px;transition:border .15s}
+.form-textarea:focus{border-color:#8b7355;background:#fff}
+.form-section{font-size:12px;font-weight:600;color:#8b7355;margin:18px 0 12px;padding-bottom:6px;border-bottom:.5px solid #f0f0ec;grid-column:1/-1}
+
+.btn-save{background:#1a1a1a;color:#fff;border:none;border-radius:10px;padding:10px 24px;font-size:13px;font-weight:600;cursor:pointer;transition:background .15s}
+.btn-save:hover{background:#333}
+.btn-cancel{background:transparent;color:#888;border:.5px solid #e8e8e4;border-radius:10px;padding:10px 20px;font-size:13px;cursor:pointer}
+.btn-cancel:hover{background:#f5f5f3}
+.btn-delete{background:#fde8e8;color:#a81a1a;border:none;border-radius:10px;padding:10px 20px;font-size:13px;font-weight:600;cursor:pointer;margin-right:auto}
+.btn-delete:hover{background:#f5d0d0}
 
 .hidden{display:none}
 .flex{display:flex}
 .flex-center{display:flex;align-items:center}
-.gap6{gap:6px}
-.gap8{gap:8px}
-.gap10{gap:10px}
-.gap12{gap:12px}
-.flex1{flex:1}
-.fw6{font-weight:600}
-.fw7{font-weight:700}
-.f11{font-size:11px}
-.f12{font-size:12px}
-.f13{font-size:13px}
-.muted{color:#888}
-.lighter{color:#aaa}
+.gap6{gap:6px}.gap8{gap:8px}.gap10{gap:10px}.gap12{gap:12px}
+.flex1{flex:1}.fw6{font-weight:600}.fw7{font-weight:700}
+.f11{font-size:11px}.f12{font-size:12px}.f13{font-size:13px}
+.muted{color:#888}.lighter{color:#aaa}
 .ellipsis{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.mb4{margin-bottom:4px}
-.mb8{margin-bottom:8px}
-.mb12{margin-bottom:12px}
-.mb20{margin-bottom:20px}
-.mb24{margin-bottom:24px}
+.mb4{margin-bottom:4px}.mb8{margin-bottom:8px}.mb12{margin-bottom:12px}.mb20{margin-bottom:20px}.mb24{margin-bottom:24px}
 </style>
 </head>
 <body>
 <div class="app">
 
-<!-- SIDEBAR -->
 <div class="sidebar">
   <div class="logo">
     <div class="logo-main">Welcome</div>
@@ -148,70 +152,79 @@ input{font-family:'DM Sans',sans-serif}
   </div>
   <nav class="nav">
     <div class="nav-label">Principal</div>
-    <button class="nav-btn active" onclick="setView('dashboard')">
+    <button class="nav-btn active" onclick="setView('dashboard',this)">
       <i class="ti ti-layout-dashboard"></i><span class="flex1">Visão geral</span>
     </button>
-    <button class="nav-btn" onclick="setView('producao')">
-      <i class="ti ti-settings-2"></i><span class="flex1">Produção</span>
-      <span class="nav-count" id="cnt-producao">—</span>
-    </button>
-    <button class="nav-btn" onclick="setView('casamentos-2026')">
+    <button class="nav-btn" onclick="setView('casamentos-2026',this)">
       <i class="ti ti-calendar-event"></i><span class="flex1">Casamentos 2026</span>
       <span class="nav-count" id="cnt-2026">—</span>
     </button>
-    <button class="nav-btn" onclick="setView('casamentos-2027')">
+    <button class="nav-btn" onclick="setView('casamentos-2027',this)">
       <i class="ti ti-calendar-event"></i><span class="flex1">Casamentos 2027</span>
       <span class="nav-count" id="cnt-2027">—</span>
     </button>
-    <button class="nav-btn" onclick="setView('planejamento')">
+    <button class="nav-btn" onclick="setView('planejamento',this)">
       <i class="ti ti-pencil"></i><span class="flex1">Planejamento</span>
       <span class="nav-count" id="cnt-plan">—</span>
+    </button>
+    <button class="nav-btn" onclick="setView('producao',this)">
+      <i class="ti ti-settings-2"></i><span class="flex1">Produção</span>
+      <span class="nav-count" id="cnt-producao">—</span>
     </button>
   </nav>
   <div class="user-area">
     <div class="flex-center gap10">
       <div class="user-avatar">AT</div>
-      <div>
-        <div class="f13 fw6">Ana Tereza</div>
-        <div class="f11 lighter">Coordenadora</div>
-      </div>
+      <div><div class="f13 fw6">Ana Tereza</div><div class="f11 lighter">Coordenadora</div></div>
     </div>
   </div>
 </div>
 
-<!-- MAIN -->
 <div class="main">
   <div class="topbar">
     <h1 id="page-title">Visão geral</h1>
-    <div class="search-wrap" id="search-area" style="display:none">
+    <div class="search-wrap hidden" id="search-area">
       <i class="ti ti-search"></i>
-      <input class="search-input" id="search-input" placeholder="Buscar casal..." oninput="applyFilters()"/>
+      <input class="search-input" id="search-input" placeholder="Buscar casal..." oninput="render()"/>
     </div>
   </div>
-
   <div class="filterbar hidden" id="filterbar">
-    <button class="filter-btn active-dark" data-status="todos" onclick="setStatusFilter(this,'todos')">Todos</button>
-    <button class="filter-btn" data-status="em-andamento" onclick="setStatusFilter(this,'em-andamento')">Em andamento</button>
-    <button class="filter-btn" data-status="finalizado" onclick="setStatusFilter(this,'finalizado')">Finalizados</button>
-    <button class="filter-btn" data-status="urgente" onclick="setStatusFilter(this,'urgente')">Urgentes</button>
+    <button class="filter-btn active-dark" onclick="setStatusFilter(this,'todos')">Todos</button>
+    <button class="filter-btn" onclick="setStatusFilter(this,'em-andamento')">Em andamento</button>
+    <button class="filter-btn" onclick="setStatusFilter(this,'finalizado')">Finalizados</button>
+    <button class="filter-btn" onclick="setStatusFilter(this,'urgente')">Urgentes</button>
     <div class="divider"></div>
-    <button class="filter-btn active-gold" data-dest="todos" onclick="setDestinoFilter(this,'todos')">Todos</button>
-    <button class="filter-btn" data-dest="Nordeste" onclick="setDestinoFilter(this,'Nordeste')">🌊 Nordeste</button>
-    <button class="filter-btn" data-dest="Caribe" onclick="setDestinoFilter(this,'Caribe')">🌴 Caribe</button>
-    <button class="filter-btn" data-dest="Itália" onclick="setDestinoFilter(this,'Itália')">🇮🇹 Itália</button>
-    <button class="filter-btn" data-dest="Grécia" onclick="setDestinoFilter(this,'Grécia')">🇬🇷 Grécia</button>
-    <button class="filter-btn" data-dest="México" onclick="setDestinoFilter(this,'México')">🇲🇽 México</button>
-    <button class="filter-btn" data-dest="Brasil" onclick="setDestinoFilter(this,'Brasil')">🇧🇷 Brasil</button>
-    <button class="filter-btn" data-dest="Argentina" onclick="setDestinoFilter(this,'Argentina')">🇦🇷 Argentina</button>
+    <button class="filter-btn active-gold" onclick="setDestinoFilter(this,'todos')">Todos</button>
+    <button class="filter-btn" onclick="setDestinoFilter(this,'Nordeste')">🌊 Nordeste</button>
+    <button class="filter-btn" onclick="setDestinoFilter(this,'Caribe')">🌴 Caribe</button>
+    <button class="filter-btn" onclick="setDestinoFilter(this,'Itália')">🇮🇹 Itália</button>
+    <button class="filter-btn" onclick="setDestinoFilter(this,'Grécia')">🇬🇷 Grécia</button>
+    <button class="filter-btn" onclick="setDestinoFilter(this,'México')">🇲🇽 México</button>
+    <button class="filter-btn" onclick="setDestinoFilter(this,'Brasil')">🇧🇷 Brasil</button>
+    <button class="filter-btn" onclick="setDestinoFilter(this,'Argentina')">🇦🇷 Argentina</button>
   </div>
-
   <div class="content" id="content"></div>
 </div>
 </div>
 
+<!-- MODAL -->
+<div class="modal-overlay hidden" id="modal-overlay" onclick="handleOverlayClick(event)">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <div class="modal-title" id="modal-title">Editar casal</div>
+      <button class="modal-close" onclick="closeModal()"><i class="ti ti-x"></i></button>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+    <div class="modal-footer">
+      <button class="btn-delete" onclick="deleteItem()"><i class="ti ti-trash"></i> Excluir</button>
+      <button class="btn-cancel" onclick="closeModal()">Cancelar</button>
+      <button class="btn-save" onclick="saveItem()"><i class="ti ti-check"></i> Salvar</button>
+    </div>
+  </div>
+</div>
+
 <script>
 // ─── DATA ────────────────────────────────────────────────────────────────────
-
 const PLANNERS = {
   Julia:    {color:"#E8F4FD",text:"#1a6fa8",initials:"JU"},
   Raphaela: {color:"#FDE8F4",text:"#a81a6f",initials:"RA"},
@@ -222,7 +235,7 @@ const PLANNERS = {
   Diana:    {color:"#FDE8E8",text:"#a81a1a",initials:"DI"},
 };
 
-const C26 = [
+let C26 = [
   {id:1,casal:"Marina e Andrey",local:"Dreams Macao",destino:"Caribe",data:"12/04/2026",produtora:"Julia",assessor:"n/a",status:"finalizado",convidados:0,fornecedores:["foto e vídeo","make","locais","decoração"],andamento:"FINALIZADO",eventos:["10/04: Welcome drinks","12/04: Pool Party"]},
   {id:2,casal:"Tayane e Erton",local:"Unico 2087",destino:"Argentina",data:"28/04/2026",produtora:"Julia",assessor:"Elopement",status:"finalizado",convidados:0,fornecedores:["make","foto","local"],andamento:"FINALIZADO",eventos:[]},
   {id:3,casal:"Luise e Philipe",local:"Viamonte",destino:"Argentina",data:"20/04/2026",produtora:"Raphaela",assessor:"Luan e equipe",status:"em-andamento",convidados:0,fornecedores:["DJ","decoração","Foto","Cabelo e make","Transfer","Músicos","Vídeo"],andamento:"PAGAMENTO DA TAXA",eventos:["16/04: Visita na vinícola","17/04: Passeio de barco","20/04: After party"]},
@@ -235,9 +248,9 @@ const C26 = [
   {id:10,casal:"Erika e Marcelo",local:"Andromeda Villas",destino:"Grécia",data:"30/04/2026",produtora:"Raphaela",assessor:"n/a",status:"urgente",convidados:20,fornecedores:["Celebrante","Sax","Extras cerimônia","Papelaria","Make e Hair"],andamento:"SEM RESPOSTA DO CASAL",eventos:["30/04: Jantar no restaurante"]},
   {id:11,casal:"Isadora e Conrado",local:"Casal dos Lobos - PE",destino:"Nordeste",data:"02/05/2026",produtora:"Julia",assessor:"Daniele e equipe",status:"em-andamento",convidados:80,fornecedores:["Make e hair","Buffet","Bar","Decoração","Foto e vídeo","Músicos cerimonia","Bolo"],andamento:"roteiro ok - fechando cervejas",eventos:[]},
   {id:12,casal:"Nathalia e Vinicius",local:"Dreams Flora",destino:"Caribe",data:"06/05/2026",produtora:"Raphaela",assessor:"n/a",status:"em-andamento",convidados:0,fornecedores:["foto e video"],andamento:"pagamento final",eventos:["05/05: Festa de boas-vindas","06/05: Encontro na piscina"]},
-  {id:13,casal:"Maria Cecília e Andrison",local:"Quinta do Vale",destino:"Brasil",data:"08/05/2026",produtora:"Julia",assessor:"n/a",status:"finalizado",convidados:0,fornecedores:[],andamento:"FINALIZADO",eventos:["06/05: Despedida","08/05: Churrasco ou degustação"]},
+  {id:13,casal:"Maria Cecília e Andrison",local:"Quinta do Vale",destino:"Brasil",data:"08/05/2026",produtora:"Julia",assessor:"n/a",status:"finalizado",convidados:0,fornecedores:[],andamento:"FINALIZADO",eventos:[]},
   {id:14,casal:"Gabriela e Bernard",local:"Club Med Rio das Pedras",destino:"Brasil",data:"10/05/2026",produtora:"Raphaela",assessor:"Rapha + Rosi e equipe",status:"finalizado",convidados:0,fornecedores:["atração","Foto","Video","Make","Docinhos","Bar de drinks","Buffet","Decoração"],andamento:"FINALIZADO",eventos:["08/05: Encontro na piscina","09/05: Jantar privativo"]},
-  {id:15,casal:"Yandra e Cintia",local:"Secrets Akumal",destino:"México",data:"13/05/2026",produtora:"Julia",assessor:"Paula",status:"finalizado",convidados:0,fornecedores:["menu","cabelo e maquiagem","celebrante","foto e vídeo","DJ, som e iluminação"],andamento:"FINALIZADO",eventos:["12/05: Jantar de boas vindas","13/05: casamento","14/05: passeio aos cenotes","15/05: passeio de barco"]},
+  {id:15,casal:"Yandra e Cintia",local:"Secrets Akumal",destino:"México",data:"13/05/2026",produtora:"Julia",assessor:"Paula",status:"finalizado",convidados:0,fornecedores:["menu","cabelo e maquiagem","celebrante","foto e vídeo","DJ, som e iluminação"],andamento:"FINALIZADO",eventos:["12/05: Jantar de boas vindas","15/05: passeio de barco"]},
   {id:16,casal:"Hanna e Fabrício",local:"Estancia La Candelaria",destino:"Argentina",data:"28/05/2026",produtora:"Giulia",assessor:"Elopement",status:"em-andamento",convidados:0,fornecedores:["Foto e vídeo","Cabelo e make","Músicos","Decoração","Storymaker"],andamento:"Finalização",eventos:[]},
   {id:17,casal:"Leticia e Mike",local:"Dreams Onyx Resort",destino:"Caribe",data:"22/05/2026",produtora:"Raphaela",assessor:"Michelli e equipe",status:"em-andamento",convidados:0,fornecedores:["Celebrante","Foto e video","DJ","Banda"],andamento:"Aguardando atualização do INVOICE",eventos:["20/05: Festa de boas vindas","22/05: Festa na piscina"]},
   {id:18,casal:"Cíntia e Flavio",local:"Andromeda Villas",destino:"Grécia",data:"26/05/2026",produtora:"Julia",assessor:"Elopement",status:"em-andamento",convidados:2,fornecedores:["menu","foto","decor","violino"],andamento:"FINALIZAÇÃO - PAGAMENTO FINAL",eventos:[]},
@@ -262,7 +275,7 @@ const C26 = [
   {id:37,casal:"Flávia e Henrique",local:"Grand Palladium",destino:"Nordeste",data:"12/10/2026",produtora:"Julia",assessor:"Tati e equipe",status:"em-andamento",convidados:0,fornecedores:[],andamento:"Conversando sobre decoração",eventos:[]},
   {id:38,casal:"Pâmella e Rafael",local:"Dreams Flora",destino:"Caribe",data:"06/10/2026",produtora:"Raphaela",assessor:"Luan + Equipe",status:"em-andamento",convidados:0,fornecedores:["DJ","Musica da cerimonia"],andamento:"Aguardando início com hotel",eventos:["05/10: Welcome Drinks","06/10: Pool Party"]},
   {id:39,casal:"Ana Luisa e Igor",local:"Grand Palladium",destino:"Nordeste",data:"12/10/2026",produtora:"Raphaela",assessor:"Tati e equipe",status:"em-andamento",convidados:0,fornecedores:["Fotografo"],andamento:"Cotação da decoração",eventos:[]},
-  {id:40,casal:"Ana Claudia e Pedro",local:"Grand Palladium",destino:"Nordeste",data:"09/10/2026",produtora:"Julia",assessor:"Tati e equipe",status:"em-andamento",convidados:0,fornecedores:["Foto e vídeo","Sonorização","Atração sunset","Atração casamento","DJ","Cabelo e make","Decoração","Sapato","Musica cerimonia","Gerador"],andamento:"Preenchendo ficha de cerimonia",eventos:["08/10: Jantar na varanda","09/10: Luau privativo"]},
+  {id:40,casal:"Ana Claudia e Pedro",local:"Grand Palladium",destino:"Nordeste",data:"09/10/2026",produtora:"Julia",assessor:"Tati e equipe",status:"em-andamento",convidados:0,fornecedores:["Foto e vídeo","Sonorização","DJ","Cabelo e make","Decoração","Gerador"],andamento:"Preenchendo ficha de cerimonia",eventos:["08/10: Jantar na varanda","09/10: Luau privativo"]},
   {id:41,casal:"Barbara e Yago",local:"Dreams Flora",destino:"Caribe",data:"13/10/2026",produtora:"Raphaela",assessor:"Rapha e Ana Tereza",status:"urgente",convidados:0,fornecedores:["Fotógrafo","Videomaker","Cabelo e make"],andamento:"Conversando sobre decoração",eventos:["11/10: cocobongo","12/10: Passeio de barco","13/10: Jantar de boas vindas"]},
   {id:42,casal:"Patricia e Ranieri",local:"Casa Brasileira",destino:"Brasil",data:"14/10/2026",produtora:"Julia",assessor:"Priscila Gomes",status:"em-andamento",convidados:0,fornecedores:[],andamento:"Negociando valores de vídeo e upgrade make",eventos:["14/10: Boas-vindas/passeio"]},
   {id:43,casal:"Amanda e Hayson",local:"Agriturismo Belagaggio",destino:"Itália",data:"29/10/2026",produtora:"Raphaela",assessor:"a definir",status:"em-andamento",convidados:0,fornecedores:["Fotógrafo","Videomaker","Cabelo e make","Celebrante"],andamento:"Subindo informações na AV",eventos:["28/10: Pizza party"]},
@@ -271,14 +284,14 @@ const C26 = [
   {id:46,casal:"Sarah e André",local:"Grand Palladium",destino:"Nordeste",data:"2026",produtora:"Julia",assessor:"Tati e equipe",status:"em-andamento",convidados:50,fornecedores:[],andamento:"Vamos começar a definir fornecedores",eventos:[]},
   {id:47,casal:"Naiara e Diogo",local:"Hard Rock Riviera Maya",destino:"México",data:"18/11/2026",produtora:"Raphaela",assessor:"Ju goes + sarah",status:"em-andamento",convidados:0,fornecedores:["Todos do hotel","Papelaria"],andamento:"Aguardando início da produção com o hotel",eventos:["17/11: Boas vindas"]},
   {id:48,casal:"Ana Júlia e Alan",local:"Fasano Angra dos Reis",destino:"Brasil",data:"19/11/2026",produtora:"Julia",assessor:"Patricia Campos da Silva",status:"em-andamento",convidados:12,fornecedores:["ID Visual","foto e vídeo"],andamento:"Próximos passos: decoração",eventos:["18/11: boas vindas","19/11: cerimonia"]},
-  {id:49,casal:"Raquel e David",local:"Hard Rock Riviera Maya",destino:"México",data:"19/11/2026",produtora:"Raphaela",assessor:"Ju goes + sarah",status:"em-andamento",convidados:0,fornecedores:[],andamento:"Subindo orçamento de foto e video + casal na igreja",eventos:["18/11: Coco bongo","20/11: Festa na piscina"]},
+  {id:49,casal:"Raquel e David",local:"Hard Rock Riviera Maya",destino:"México",data:"19/11/2026",produtora:"Raphaela",assessor:"Ju goes + sarah",status:"em-andamento",convidados:0,fornecedores:[],andamento:"Subindo orçamento de foto e video",eventos:["18/11: Coco bongo","20/11: Festa na piscina"]},
   {id:50,casal:"William e Lucas",local:"Dreams La Romana",destino:"Caribe",data:"22/11/2026",produtora:"Raphaela",assessor:"Michelli + assessora",status:"em-andamento",convidados:0,fornecedores:["Fotógrafo e video","Dj","Doces","Papelaria"],andamento:"Aguardando início com o hotel",eventos:["20/11: Luau","21/11: Passeio de barco"]},
   {id:51,casal:"Maryana e Kevin",local:"Hard Rock Punta Cana",destino:"Caribe",data:"2026",produtora:"Julia",assessor:"Michelli",status:"em-andamento",convidados:20,fornecedores:[],andamento:"Definindo programação e celebrantes",eventos:[]},
   {id:52,casal:"Leticia e Vitor",local:"Hyatt Ziva Cancun",destino:"México",data:"08/12/2026",produtora:"Raphaela",assessor:"Paula",status:"em-andamento",convidados:0,fornecedores:[],andamento:"Subindo orçamento de foto e video",eventos:["07/12: Jantar de boa-vindas"]},
   {id:53,casal:"Laize e Ricardo",local:"Hard Rock Punta Cana",destino:"Caribe",data:"20/12/2026",produtora:"Raphaela",assessor:"Day + Luan",status:"em-andamento",convidados:0,fornecedores:["Foto"],andamento:"Subindo orçamento de foto e video",eventos:["19/12: Luau","20/12: Pool Party"]},
 ];
 
-const C27 = [
+let C27 = [
   {id:101,casal:"Camila e Nickolas",local:"Sandos Caracol",destino:"México",data:"15/01/2027",produtora:"Raphaela",assessor:"a definir",status:"planejamento",convidados:50,fornecedores:[],andamento:"",eventos:[]},
   {id:102,casal:"Raissa e Gustavo",local:"Moon Palace",destino:"México",data:"2027",produtora:"Julia",assessor:"a definir",status:"planejamento",convidados:30,fornecedores:[],andamento:"",eventos:[]},
   {id:103,casal:"Rayani e Victor",local:"Dreams La Romana",destino:"Caribe",data:"2027",produtora:"Raphaela",assessor:"a definir",status:"em-andamento",convidados:60,fornecedores:[],andamento:"Definição do espaço",eventos:[]},
@@ -289,12 +302,12 @@ const C27 = [
   {id:108,casal:"Ana Luiza e André",local:"Dreams Macao",destino:"Caribe",data:"05/05/2027",produtora:"Julia",assessor:"a definir",status:"planejamento",convidados:0,fornecedores:[],andamento:"",eventos:["03/05: Boas-Vindas","04/05: Encontro na piscina","06/05: Festa no barco"]},
   {id:109,casal:"Gabriela e Luiz Gustavo",local:"Villa Porta",destino:"Itália",data:"19/05/2027",produtora:"Julia",assessor:"A definir",status:"em-andamento",convidados:30,fornecedores:[],andamento:"Solicitou invoice",eventos:[]},
   {id:110,casal:"Mayara e Vinicius",local:"Agriturismo Belagaggio",destino:"Itália",data:"27/05/2027",produtora:"Raphaela",assessor:"A definir",status:"em-andamento",convidados:0,fornecedores:["Fotógrafo","Videomaker","Carrinho de sorvete","Músicos","DJ"],andamento:"",eventos:["27/05: Pizza party"]},
-  {id:111,casal:"Daniela e Gabriel",local:"Dreams Macao",destino:"Caribe",data:"09/09/2027",produtora:"Raphaela",assessor:"N/D",status:"planejamento",convidados:0,fornecedores:[],andamento:"Reunião de Pacote 09/04",eventos:["06/09: Passeio de barco","07/09: Jantar de boas vindas","09/09: Encontro na piscina"]},
+  {id:111,casal:"Daniela e Gabriel",local:"Dreams Macao",destino:"Caribe",data:"09/09/2027",produtora:"Raphaela",assessor:"N/D",status:"planejamento",convidados:0,fornecedores:[],andamento:"Reunião de Pacote 09/04",eventos:["06/09: Passeio de barco","09/09: Encontro na piscina"]},
   {id:112,casal:"Nathalye e Pedro",local:"Casa Cornacchi",destino:"Itália",data:"12/10/2027",produtora:"Raphaela",assessor:"A definir",status:"planejamento",convidados:0,fornecedores:[],andamento:"Reunião de alinhamento 13/05",eventos:["11/10: Pizza party"]},
   {id:113,casal:"Monara e Victor",local:"Hard Rock Punta Cana",destino:"Caribe",data:"2027",produtora:"Julia",assessor:"Elopement",status:"planejamento",convidados:0,fornecedores:[],andamento:"Data alterada de 2026 para 2027",eventos:[]},
 ];
 
-const PLAN = [
+let PLAN = [
   {id:201,casal:"Carol e Gabriel",destino:"Nordeste",dataInteresse:"03/09/2027",convidados:80,responsavel:"Corina",status:"em-andamento",andamento:"Em fechamento com o hotel",hotel:"Villa Tainá"},
   {id:202,casal:"Jessimeire e Rolf",destino:"Nordeste",dataInteresse:"19/09/2027",convidados:80,responsavel:"Corina",status:"em-andamento",andamento:"Aguardando contrato do hotel para passar para produção",hotel:"Bblue"},
   {id:203,casal:"Catherine e Rodolfo",destino:"Grécia",dataInteresse:"23/09/2027",convidados:65,responsavel:"Sabrina",status:"em-andamento",andamento:"Em fase de negociação com o Hotel",hotel:"Rocabella"},
@@ -319,7 +332,7 @@ const PLAN = [
   {id:222,casal:"Thelma e Denis",destino:"Caribe",dataInteresse:"19/11/2026",convidados:15,responsavel:"Sabrina",status:"em-andamento",andamento:"Em negociação com o hotel",hotel:"Hard Rock PC / Hyatt Cap Cana"},
 ];
 
-const DISTRATOS = [
+let DISTRATOS = [
   {id:301,casal:"Francielly e Daniel",destino:"Nordeste",convidados:130,responsavel:"Corina",andamento:"Distrato sem reembolso enviado para assinatura em 25/03"},
   {id:302,casal:"Júlia e Bruno",destino:"Caribe ou Nordeste",convidados:80,responsavel:"Corina",andamento:"Pediram distrato. Enviar até 6ª feira 27/03"},
   {id:303,casal:"Marcela e Nicolas",destino:"Búzios",convidados:50,responsavel:"Corina",andamento:"08/05 Cori precisa fazer o distrato para assinatura e reembolso"},
@@ -332,162 +345,180 @@ let statusFilter = 'todos';
 let destinoFilter = 'todos';
 let expandedId = null;
 let groupBy = 'produtora';
+let editingItem = null;
+let editingDataset = null; // 'c26','c27','plan','distrato'
+let nextId = 9000;
 
 // ─── HELPERS ─────────────────────────────────────────────────────────────────
 const MESES = ["","jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
-const FLAGS = {Itália:"🇮🇹",Nordeste:"🌊",Caribe:"🌴",México:"🇲🇽",Grécia:"🇬🇷",Argentina:"🇦🇷",Portugal:"🇵🇹",Brasil:"🇧🇷","Punta Cana":"🌴",Mendoza:"🇦🇷",Aruba:"🏝️","Riviera Maya":"🇲🇽",Espanha:"🇪🇸",Bahia:"🌊",Jamaica:"🏝️"};
-
-function destFlag(d){
-  if(!d) return "📍";
-  for(const [k,v] of Object.entries(FLAGS)) if(d.includes(k)) return v;
-  return "📍";
-}
-
-function parseDate(s){
-  if(!s||!s.includes("/")) return null;
-  const p=s.split("/");
-  return new Date(`${p[2]}-${p[1].padStart(2,"0")}-${p[0].padStart(2,"0")}`);
-}
-
-function diasRestantes(s){
-  const d=parseDate(s);
-  if(!d) return null;
-  return Math.ceil((d-new Date())/86400000);
-}
-
-function fmtDias(s){
-  const d=diasRestantes(s);
-  if(d===null) return '';
-  const cor=d<0?"#6f1aa8":d<30?"#a81a1a":d<90?"#856404":"#1a6f4a";
-  const bg=d<0?"#f5e8fd":d<30?"#fde8e8":d<90?"#fff3cd":"#e8f4ea";
-  const label=d<0?"Realizado":d===0?"Hoje!":d+"d";
-  return `<span class="badge b-sm" style="background:${bg};color:${cor}">${label}</span>`;
-}
-
-function plannerDot(name,size=24){
-  const p=PLANNERS[name]||{color:"#f0f0f0",text:"#666",initials:(name||"?").slice(0,2).toUpperCase()};
-  return `<div class="planner-chip"><div class="planner-dot" style="width:${size}px;height:${size}px;background:${p.color};color:${p.text};font-size:${size<=24?9:11}px">${p.initials}</div><span class="f12 muted">${name||"—"}</span></div>`;
-}
-
-function statusBadge(s){
-  const m={finalizado:{l:"Finalizado",c:"b-green"},["em-andamento"]:{l:"Em andamento",c:"b-amber"},urgente:{l:"Urgente",c:"b-red"},planejamento:{l:"Planejamento",c:"b-blue"},distrato:{l:"Distrato",c:"b-purple"}};
-  const x=m[s]||m["em-andamento"];
-  return `<span class="badge ${x.c}">${x.l}</span>`;
-}
-
-function progBar(s){
-  const pct={finalizado:100,"em-andamento":55,urgente:40,planejamento:20,distrato:15}[s]||50;
-  const col={finalizado:"#1e7e34","em-andamento":"#856404",urgente:"#a81a1a",planejamento:"#1a4fa8",distrato:"#6f1aa8"}[s]||"#856404";
-  return `<div class="prog-wrap"><div class="prog-bar"><div class="prog-fill" style="width:${pct}%;background:${col}"></div></div><span class="f11 lighter">${pct}%</span></div>`;
-}
-
-function dateBox(data,urgente=false){
-  if(!data||!data.includes("/")){
-    return `<div class="date-box${urgente?' urgente-date-box':''}"><span class="f11 lighter">${data||"—"}</span></div>`;
-  }
-  const p=data.split("/");
-  const bg=urgente?"#fde8e8":"#f7f6f3";
-  const dc=urgente?"#a81a1a":"inherit";
-  return `<div class="date-box" style="background:${bg}"><div class="date-day" style="color:${dc}">${p[0]}</div><div class="date-mon">${MESES[parseInt(p[1])]||p[1]}</div></div>`;
-}
-
-function fornPills(list,max=4){
-  if(!list||list.length===0) return `<span class="badge b-sm b-red">sem fornecedores</span>`;
-  let h=list.slice(0,max).map(f=>`<span class="badge b-sm b-gray">${f}</span>`).join("");
-  if(list.length>max) h+=`<span class="badge b-sm" style="background:#e8e8e4;color:#888">+${list.length-max}</span>`;
-  return `<div style="display:flex;flex-wrap:wrap;gap:3px">${h}</div>`;
-}
-
+const FLAGS = {Itália:"🇮🇹",Nordeste:"🌊",Caribe:"🌴",México:"🇲🇽",Grécia:"🇬🇷",Argentina:"🇦🇷",Portugal:"🇵🇹",Brasil:"🇧🇷","Punta Cana":"🌴",Mendoza:"🇦🇷",Aruba:"🏝️",Espanha:"🇪🇸",Bahia:"🌊"};
+function destFlag(d){if(!d)return"📍";for(const[k,v]of Object.entries(FLAGS))if(d.includes(k))return v;return"📍";}
+function parseDate(s){if(!s||!s.includes("/"))return null;const p=s.split("/");return new Date(`${p[2]}-${p[1].padStart(2,"0")}-${p[0].padStart(2,"0")}`);}
+function diasRestantes(s){const d=parseDate(s);if(!d)return null;return Math.ceil((d-new Date())/86400000);}
+function fmtDias(s){const d=diasRestantes(s);if(d===null)return'';const cor=d<0?"#6f1aa8":d<30?"#a81a1a":d<90?"#856404":"#1a6f4a";const bg=d<0?"#f5e8fd":d<30?"#fde8e8":d<90?"#fff3cd":"#e8f4ea";const label=d<0?"Realizado":d===0?"Hoje!":d+"d";return`<span class="badge b-sm" style="background:${bg};color:${cor}">${label}</span>`;}
+function plannerDot(name,size=24){const p=PLANNERS[name]||{color:"#f0f0f0",text:"#666",initials:(name||"?").slice(0,2).toUpperCase()};return`<div class="planner-chip"><div class="planner-dot" style="width:${size}px;height:${size}px;background:${p.color};color:${p.text};font-size:${size<=24?9:11}px">${p.initials}</div><span class="f12 muted">${name||"—"}</span></div>`;}
+function statusBadge(s){const m={finalizado:{l:"Finalizado",c:"b-green"},"em-andamento":{l:"Em andamento",c:"b-amber"},urgente:{l:"Urgente",c:"b-red"},planejamento:{l:"Planejamento",c:"b-blue"},distrato:{l:"Distrato",c:"b-purple"}};const x=m[s]||m["em-andamento"];return`<span class="badge ${x.c}">${x.l}</span>`;}
+function progBar(s){const pct={finalizado:100,"em-andamento":55,urgente:40,planejamento:20,distrato:15}[s]||50;const col={finalizado:"#1e7e34","em-andamento":"#856404",urgente:"#a81a1a",planejamento:"#1a4fa8",distrato:"#6f1aa8"}[s]||"#856404";return`<div class="prog-wrap"><div class="prog-bar"><div class="prog-fill" style="width:${pct}%;background:${col}"></div></div><span class="f11 lighter">${pct}%</span></div>`;}
+function dateBox(data,urgente=false){if(!data||!data.includes("/")){return`<div class="date-box" style="background:${urgente?"#fde8e8":"#f7f6f3"}"><span class="f11 lighter">${data||"—"}</span></div>`;}const p=data.split("/");return`<div class="date-box" style="background:${urgente?"#fde8e8":"#f7f6f3"}"><div class="date-day" style="color:${urgente?"#a81a1a":"inherit"}">${p[0]}</div><div class="date-mon">${MESES[parseInt(p[1])]||p[1]}</div></div>`;}
+function fornPills(list,max=4){if(!list||list.length===0)return`<span class="badge b-sm b-red">sem fornecedores</span>`;let h=list.slice(0,max).map(f=>`<span class="badge b-sm b-gray">${f}</span>`).join("");if(list.length>max)h+=`<span class="badge b-sm" style="background:#e8e8e4;color:#888">+${list.length-max}</span>`;return`<div style="display:flex;flex-wrap:wrap;gap:3px">${h}</div>`;}
 function getSearch(){return document.getElementById("search-input")?.value.toLowerCase()||"";}
+function applyFilter(list){const s=getSearch();return list.filter(c=>{if(statusFilter!=="todos"&&c.status!==statusFilter)return false;if(destinoFilter!=="todos"&&!(c.destino||"").includes(destinoFilter))return false;if(s&&!(c.casal||"").toLowerCase().includes(s)&&!(c.local||"").toLowerCase().includes(s))return false;return true;});}
+const hasAssessor=c=>c.assessor&&!["n/a","a definir","A DEFINIR","N/A","N/D","—",""].includes(c.assessor);
 
-function applyFilter(list){
-  const s=getSearch();
-  return list.filter(c=>{
-    if(statusFilter!=="todos"&&c.status!==statusFilter) return false;
-    if(destinoFilter!=="todos"&&!(c.destino||"").includes(destinoFilter)) return false;
-    if(s&&!(c.casal||"").toLowerCase().includes(s)&&!(c.local||"").toLowerCase().includes(s)) return false;
-    return true;
-  });
+// ─── MODAL ───────────────────────────────────────────────────────────────────
+function openModal(item, dataset) {
+  editingItem = JSON.parse(JSON.stringify(item)); // deep clone
+  editingDataset = dataset;
+  document.getElementById("modal-title").textContent = item.casal || "Editar";
+  document.getElementById("modal-body").innerHTML = buildForm(item, dataset);
+  document.getElementById("modal-overlay").classList.remove("hidden");
+}
+
+function closeModal() {
+  document.getElementById("modal-overlay").classList.add("hidden");
+  editingItem = null;
+  editingDataset = null;
+}
+
+function handleOverlayClick(e) {
+  if(e.target === document.getElementById("modal-overlay")) closeModal();
+}
+
+function buildForm(item, dataset) {
+  const isPlan = dataset === 'plan';
+  const isDistrato = dataset === 'distrato';
+  const statusOptions = ["em-andamento","finalizado","urgente","planejamento","distrato"];
+  const plannerOptions = Object.keys(PLANNERS);
+  const destinoOptions = ["Nordeste","Caribe","Itália","Grécia","México","Brasil","Argentina","Portugal","Punta Cana","Mendoza","Aruba","Espanha","Bahia","Outro"];
+
+  if(isDistrato) {
+    return `<div class="form-grid">
+      <div class="form-group full"><div class="form-label">Nome do casal</div><input class="form-input" id="f-casal" value="${item.casal||''}"/></div>
+      <div class="form-group"><div class="form-label">Destino</div><input class="form-input" id="f-destino" value="${item.destino||''}"/></div>
+      <div class="form-group"><div class="form-label">Convidados</div><input class="form-input" type="number" id="f-convidados" value="${item.convidados||0}"/></div>
+      <div class="form-group"><div class="form-label">Responsável</div><select class="form-select" id="f-responsavel">${plannerOptions.map(p=>`<option value="${p}"${item.responsavel===p?" selected":""}>${p}</option>`).join("")}</select></div>
+      <div class="form-group full"><div class="form-label">Em andamento / Observações</div><textarea class="form-textarea" id="f-andamento">${item.andamento||''}</textarea></div>
+    </div>`;
+  }
+
+  if(isPlan) {
+    return `<div class="form-grid">
+      <div class="form-group full"><div class="form-label">Nome do casal</div><input class="form-input" id="f-casal" value="${item.casal||''}"/></div>
+      <div class="form-group"><div class="form-label">Destino</div><input class="form-input" id="f-destino" value="${item.destino||''}"/></div>
+      <div class="form-group"><div class="form-label">Hotel</div><input class="form-input" id="f-hotel" value="${item.hotel||''}"/></div>
+      <div class="form-group"><div class="form-label">Data de interesse</div><input class="form-input" id="f-dataInteresse" value="${item.dataInteresse||''}"/></div>
+      <div class="form-group"><div class="form-label">Convidados</div><input class="form-input" type="number" id="f-convidados" value="${item.convidados||0}"/></div>
+      <div class="form-group"><div class="form-label">Responsável</div><select class="form-select" id="f-responsavel">${plannerOptions.map(p=>`<option value="${p}"${item.responsavel===p?" selected":""}>${p}</option>`).join("")}</select></div>
+      <div class="form-group"><div class="form-label">Status</div><select class="form-select" id="f-status">${statusOptions.map(s=>`<option value="${s}"${item.status===s?" selected":""}>${s}</option>`).join("")}</select></div>
+      <div class="form-group full"><div class="form-label">Em andamento / Observações</div><textarea class="form-textarea" id="f-andamento">${item.andamento||''}</textarea></div>
+    </div>`;
+  }
+
+  // casamento (c26 ou c27)
+  return `<div class="form-grid">
+    <div class="form-group full"><div class="form-label">Nome do casal</div><input class="form-input" id="f-casal" value="${item.casal||''}"/></div>
+    <div class="form-group"><div class="form-label">Local / Hotel</div><input class="form-input" id="f-local" value="${item.local||''}"/></div>
+    <div class="form-group"><div class="form-label">Destino</div>
+      <select class="form-select" id="f-destino">${destinoOptions.map(d=>`<option value="${d}"${item.destino===d?" selected":""}>${destFlag(d)} ${d}</option>`).join("")}</select>
+    </div>
+    <div class="form-group"><div class="form-label">Data (DD/MM/AAAA)</div><input class="form-input" id="f-data" value="${item.data||''}"/></div>
+    <div class="form-group"><div class="form-label">Convidados</div><input class="form-input" type="number" id="f-convidados" value="${item.convidados||0}"/></div>
+    <div class="form-group"><div class="form-label">Produtora</div><select class="form-select" id="f-produtora">${plannerOptions.map(p=>`<option value="${p}"${item.produtora===p?" selected":""}>${p}</option>`).join("")}</select></div>
+    <div class="form-group"><div class="form-label">Assessor local</div><input class="form-input" id="f-assessor" value="${item.assessor||''}"/></div>
+    <div class="form-group"><div class="form-label">Status</div><select class="form-select" id="f-status">${statusOptions.map(s=>`<option value="${s}"${item.status===s?" selected":""}>${s}</option>`).join("")}</select></div>
+    <div class="form-group full"><div class="form-label">Em andamento / Observações</div><textarea class="form-textarea" id="f-andamento">${item.andamento||''}</textarea></div>
+    <div class="form-section">Fornecedores <span style="font-weight:400;color:#aaa">(um por linha)</span></div>
+    <div class="form-group full"><textarea class="form-textarea" id="f-fornecedores" style="min-height:90px">${(item.fornecedores||[]).join("\n")}</textarea></div>
+    <div class="form-section">Eventos <span style="font-weight:400;color:#aaa">(um por linha, ex: 21/06: Welcome drinks)</span></div>
+    <div class="form-group full"><textarea class="form-textarea" id="f-eventos" style="min-height:70px">${(item.eventos||[]).join("\n")}</textarea></div>
+  </div>`;
+}
+
+function saveItem() {
+  const ds = editingDataset;
+  const id = editingItem.id;
+
+  const g = id => { const el=document.getElementById(id); return el?el.value.trim():""; };
+
+  if(ds === 'distrato') {
+    const idx = DISTRATOS.findIndex(x=>x.id===id);
+    if(idx===-1) return;
+    DISTRATOS[idx] = {...DISTRATOS[idx], casal:g("f-casal"), destino:g("f-destino"), convidados:parseInt(g("f-convidados"))||0, responsavel:g("f-responsavel"), andamento:g("f-andamento")};
+  } else if(ds === 'plan') {
+    const idx = PLAN.findIndex(x=>x.id===id);
+    if(idx===-1) return;
+    PLAN[idx] = {...PLAN[idx], casal:g("f-casal"), destino:g("f-destino"), hotel:g("f-hotel"), dataInteresse:g("f-dataInteresse"), convidados:parseInt(g("f-convidados"))||0, responsavel:g("f-responsavel"), status:g("f-status"), andamento:g("f-andamento")};
+  } else {
+    const arr = ds==='c26'?C26:C27;
+    const idx = arr.findIndex(x=>x.id===id);
+    if(idx===-1) return;
+    arr[idx] = {...arr[idx],
+      casal:g("f-casal"), local:g("f-local"), destino:g("f-destino"), data:g("f-data"),
+      convidados:parseInt(g("f-convidados"))||0, produtora:g("f-produtora"), assessor:g("f-assessor"),
+      status:g("f-status"), andamento:g("f-andamento"),
+      fornecedores:g("f-fornecedores").split("\n").map(x=>x.trim()).filter(Boolean),
+      eventos:g("f-eventos").split("\n").map(x=>x.trim()).filter(Boolean),
+    };
+  }
+  updateCounts();
+  closeModal();
+  render();
+}
+
+function deleteItem() {
+  if(!confirm(`Excluir "${editingItem.casal}"? Esta ação não pode ser desfeita.`)) return;
+  const ds = editingDataset;
+  const id = editingItem.id;
+  if(ds==='distrato') DISTRATOS = DISTRATOS.filter(x=>x.id!==id);
+  else if(ds==='plan') PLAN = PLAN.filter(x=>x.id!==id);
+  else if(ds==='c26') C26 = C26.filter(x=>x.id!==id);
+  else C27 = C27.filter(x=>x.id!==id);
+  updateCounts();
+  closeModal();
+  render();
 }
 
 // ─── VIEWS ───────────────────────────────────────────────────────────────────
-
 function renderDashboard(){
-  const allProd=[...C26,...C27].filter(c=>c.status!=="finalizado");
   const urgAll=[...C26,...C27,...PLAN].filter(c=>c.status==="urgente").length;
-
-  // Próximos
   const now=new Date();
   const proximos=[...C26].filter(c=>{const d=parseDate(c.data);return d&&d>=now&&(d-now)<45*864e5;}).sort((a,b)=>(parseDate(a.data)||0)-(parseDate(b.data)||0)).slice(0,6);
-
-  // Planners
   const pstats={};
   [...C26,...C27].forEach(c=>{pstats[c.produtora]=(pstats[c.produtora]||0)+1;});
   PLAN.forEach(c=>{pstats[c.responsavel]=(pstats[c.responsavel]||0)+1;});
   const plist=Object.entries(pstats).filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]);
   const pmax=plist[0]?.[1]||1;
-
-  // Destinos
   const dst={};
   [...C26,...C27,...PLAN].forEach(c=>{const k=(c.destino||"Outro").split(" ")[0];dst[k]=(dst[k]||0)+1;});
   const dlist=Object.entries(dst).sort((a,b)=>b[1]-a[1]).slice(0,7);
 
   return `
   <div class="stat-grid g5">
-    ${[
-      {l:"Total casamentos",v:C26.length+C27.length,s:"2026 + 2027",col:"#1a1a1a"},
-      {l:"Casamentos 2026",v:C26.length,s:"Produção ativa",col:"#1a4fa8"},
-      {l:"Casamentos 2027",v:C27.length,s:"Em produção",col:"#1a6f4a"},
-      {l:"Em planejamento",v:PLAN.length,s:"Negociando",col:"#856404"},
-      {l:"Ações urgentes",v:urgAll,s:"Requerem atenção",col:"#a81a1a"},
-    ].map(s=>`<div class="stat-card"><div class="stat-label">${s.l}</div><div class="stat-val serif" style="color:${s.col}">${s.v}</div><div class="stat-sub">${s.s}</div></div>`).join("")}
+    ${[{l:"Total casamentos",v:C26.length+C27.length,s:"2026 + 2027",col:"#1a1a1a"},{l:"Casamentos 2026",v:C26.length,s:"Produção ativa",col:"#1a4fa8"},{l:"Casamentos 2027",v:C27.length,s:"Em produção",col:"#1a6f4a"},{l:"Em planejamento",v:PLAN.length,s:"Negociando",col:"#856404"},{l:"Ações urgentes",v:urgAll,s:"Requerem atenção",col:"#a81a1a"}].map(s=>`<div class="stat-card"><div class="stat-label">${s.l}</div><div class="stat-val serif" style="color:${s.col}">${s.v}</div><div class="stat-sub">${s.s}</div></div>`).join("")}
   </div>
-
   <div class="dash-grid">
     <div class="table-card">
       <div class="table-header">📅 Próximos casamentos</div>
-      ${proximos.length===0?`<div style="padding:24px;text-align:center;color:#aaa;font-size:13px">Nenhum nas próximas semanas</div>`:proximos.map(c=>`
-      <div class="upcoming-item">
-        ${dateBox(c.data)}
-        <div class="flex1"><div class="f13 fw6">${c.casal}</div><div class="f11 lighter">${c.local}</div></div>
-        ${statusBadge(c.status)}
-      </div>`).join("")}
+      ${proximos.length===0?`<div style="padding:24px;text-align:center;color:#aaa;font-size:13px">Nenhum nas próximas semanas</div>`:proximos.map(c=>`<div class="upcoming-item">${dateBox(c.data)}<div class="flex1"><div class="f13 fw6">${c.casal}</div><div class="f11 lighter">${c.local}</div></div>${statusBadge(c.status)}</div>`).join("")}
     </div>
-
     <div class="table-card">
       <div class="table-header">👥 Casamentos por planner</div>
       <div style="padding:16px 18px">
-        ${plist.map(([name,n])=>{const p=PLANNERS[name]||{color:"#f0f0f0",text:"#888",initials:(name||"?").slice(0,2).toUpperCase()};return`
-        <div class="planner-row">
-          <div class="planner-chip" style="min-width:90px">
-            <div class="planner-dot" style="width:28px;height:28px;background:${p.color};color:${p.text};font-size:10px">${p.initials}</div>
-            <span class="f12 muted">${name}</span>
-          </div>
-          <div class="planner-bar-wrap"><div class="planner-bar-fill" style="width:${Math.round(n/pmax*100)}%;background:${p.text}"></div></div>
-          <span class="f13 fw6" style="min-width:20px;text-align:right">${n}</span>
-        </div>`;}).join("")}
+        ${plist.map(([name,n])=>{const p=PLANNERS[name]||{color:"#f0f0f0",text:"#888",initials:(name||"?").slice(0,2).toUpperCase()};return`<div class="planner-row"><div class="planner-chip" style="min-width:90px"><div class="planner-dot" style="width:28px;height:28px;background:${p.color};color:${p.text};font-size:10px">${p.initials}</div><span class="f12 muted">${name}</span></div><div class="planner-bar-wrap"><div class="planner-bar-fill" style="width:${Math.round(n/pmax*100)}%;background:${p.text}"></div></div><span class="f13 fw6" style="min-width:20px;text-align:right">${n}</span></div>`;}).join("")}
       </div>
     </div>
   </div>
-
   <div class="table-card">
     <div class="table-header">🌍 Destinos mais frequentes</div>
-    <div class="destino-chips">
-      ${dlist.map(([d,n])=>`<div class="destino-chip"><div style="font-size:22px">${destFlag(d)}</div><div class="f13 fw6" style="margin-top:4px">${d}</div><div class="f11 lighter">${n} casamentos</div></div>`).join("")}
-    </div>
+    <div class="destino-chips">${dlist.map(([d,n])=>`<div class="destino-chip"><div style="font-size:22px">${destFlag(d)}</div><div class="f13 fw6" style="margin-top:4px">${d}</div><div class="f11 lighter">${n} casamentos</div></div>`).join("")}</div>
   </div>`;
 }
 
-function renderCasamentos(data, ano){
+function renderCasamentos(data, ano, ds){
   const filtered=applyFilter(data);
   return `
   <div class="stat-grid g4">
-    ${[
-      {l:"Total casamentos",v:data.length,s:"Em "+ano,col:"#1a4fa8"},
-      {l:"Finalizados",v:data.filter(c=>c.status==="finalizado").length,s:"Concluídos",col:"#1e7e34"},
-      {l:"Em andamento",v:data.filter(c=>c.status==="em-andamento").length,s:"Produção ativa",col:"#856404"},
-      {l:"Urgentes",v:data.filter(c=>c.status==="urgente").length,s:"Requerem ação",col:"#a81a1a"},
-    ].map(s=>`<div class="stat-card"><div class="stat-label">${s.l}</div><div class="stat-val serif" style="color:${s.col}">${s.v}</div><div class="stat-sub">${s.s}</div></div>`).join("")}
+    ${[{l:"Total casamentos",v:data.length,s:"Em "+ano,col:"#1a4fa8"},{l:"Finalizados",v:data.filter(c=>c.status==="finalizado").length,s:"Concluídos",col:"#1e7e34"},{l:"Em andamento",v:data.filter(c=>c.status==="em-andamento").length,s:"Produção ativa",col:"#856404"},{l:"Urgentes",v:data.filter(c=>c.status==="urgente").length,s:"Requerem ação",col:"#a81a1a"}].map(s=>`<div class="stat-card"><div class="stat-label">${s.l}</div><div class="stat-val serif" style="color:${s.col}">${s.v}</div><div class="stat-sub">${s.s}</div></div>`).join("")}
   </div>
   <div class="table-card">
     <div class="tbl-scroll">
@@ -495,7 +526,7 @@ function renderCasamentos(data, ano){
       <thead><tr><th>Casal</th><th>Data</th><th>Destino / Local</th><th>Produtora</th><th>Status</th><th>Progresso</th><th>Em andamento</th></tr></thead>
       <tbody>
         ${filtered.length===0?`<tr><td colspan="7" style="text-align:center;padding:40px;color:#aaa">Nenhum resultado encontrado.</td></tr>`:
-        filtered.map(c=>`<tr>
+        filtered.map(c=>`<tr onclick="openModal(${JSON.stringify(c).replace(/"/g,'&quot;')},'${ds}')">
           <td><div class="f13 fw6">${c.casal}</div>${c.convidados>0?`<div class="f11 lighter">${c.convidados} convidados</div>`:""}</td>
           <td class="f12 muted" style="white-space:nowrap">${c.data}</td>
           <td><span class="f12 muted">${destFlag(c.destino)} ${c.destino}</span><div class="f11 lighter">${c.local}</div></td>
@@ -512,55 +543,40 @@ function renderCasamentos(data, ano){
 
 function renderPlanejamento(){
   const filtered=PLAN.filter(c=>{
-    if(statusFilter!=="todos"&&c.status!==statusFilter) return false;
+    if(statusFilter!=="todos"&&c.status!==statusFilter)return false;
     const s=getSearch();
-    if(s&&!(c.casal||"").toLowerCase().includes(s)) return false;
+    if(s&&!(c.casal||"").toLowerCase().includes(s))return false;
     return true;
   });
   return `
   <div class="stat-grid g4">
-    ${[
-      {l:"Total em planejamento",v:PLAN.length,col:"#1a4fa8"},
-      {l:"Urgentes",v:PLAN.filter(c=>c.status==="urgente").length,col:"#a81a1a"},
-      {l:"Em andamento",v:PLAN.filter(c=>c.status==="em-andamento").length,col:"#856404"},
-      {l:"Distratos",v:DISTRATOS.length,col:"#6f1aa8"},
-    ].map(s=>`<div class="stat-card"><div class="stat-label">${s.l}</div><div class="stat-val serif" style="color:${s.col}">${s.v}</div></div>`).join("")}
+    ${[{l:"Total em planejamento",v:PLAN.length,col:"#1a4fa8"},{l:"Urgentes",v:PLAN.filter(c=>c.status==="urgente").length,col:"#a81a1a"},{l:"Em andamento",v:PLAN.filter(c=>c.status==="em-andamento").length,col:"#856404"},{l:"Distratos",v:DISTRATOS.length,col:"#6f1aa8"}].map(s=>`<div class="stat-card"><div class="stat-label">${s.l}</div><div class="stat-val serif" style="color:${s.col}">${s.v}</div></div>`).join("")}
   </div>
-
   <div class="table-card">
     <div class="table-header">📋 Planejamento ativo</div>
-    <div class="tbl-scroll">
-    <table class="tbl">
+    <div class="tbl-scroll"><table class="tbl">
       <thead><tr><th>Casal</th><th>Destino / Hotel</th><th>Data interesse</th><th>Convidados</th><th>Responsável</th><th>Status</th><th>Em andamento</th></tr></thead>
-      <tbody>
-        ${filtered.map(c=>`<tr>
-          <td class="f13 fw6">${c.casal}</td>
-          <td><span class="f12 muted">${destFlag(c.destino)} ${c.destino}</span><div class="f11 lighter">${c.hotel||""}</div></td>
-          <td class="f12 muted">${c.dataInteresse||"—"}</td>
-          <td class="f12 muted">${c.convidados||"—"}</td>
-          <td>${plannerDot(c.responsavel)}</td>
-          <td>${statusBadge(c.status)}</td>
-          <td class="f11 muted" style="max-width:220px"><div class="ellipsis">${c.andamento||""}</div></td>
-        </tr>`).join("")}
-      </tbody>
-    </table>
-    </div>
+      <tbody>${filtered.map(c=>`<tr onclick="openModal(${JSON.stringify(c).replace(/"/g,'&quot;')},'plan')">
+        <td class="f13 fw6">${c.casal}</td>
+        <td><span class="f12 muted">${destFlag(c.destino)} ${c.destino}</span><div class="f11 lighter">${c.hotel||""}</div></td>
+        <td class="f12 muted">${c.dataInteresse||"—"}</td>
+        <td class="f12 muted">${c.convidados||"—"}</td>
+        <td>${plannerDot(c.responsavel)}</td>
+        <td>${statusBadge(c.status)}</td>
+        <td class="f11 muted" style="max-width:220px"><div class="ellipsis">${c.andamento||""}</div></td>
+      </tr>`).join("")}</tbody>
+    </table></div>
   </div>
-
   <div class="table-card">
     <div class="table-header">⚠️ Distratos em andamento <span class="badge b-purple" style="margin-left:auto">${DISTRATOS.length} casos</span></div>
-    <table class="tbl">
-      <thead><tr><th>Casal</th><th>Destino</th><th>Convidados</th><th>Responsável</th><th>Em andamento</th></tr></thead>
-      <tbody>
-        ${DISTRATOS.map(c=>`<tr>
-          <td class="f13 fw6">${c.casal}</td>
-          <td><span class="f12 muted">${destFlag(c.destino)} ${c.destino}</span></td>
-          <td class="f12 muted">${c.convidados}</td>
-          <td>${plannerDot(c.responsavel)}</td>
-          <td class="f11 muted">${c.andamento}</td>
-        </tr>`).join("")}
-      </tbody>
-    </table>
+    <table class="tbl"><thead><tr><th>Casal</th><th>Destino</th><th>Convidados</th><th>Responsável</th><th>Em andamento</th></tr></thead>
+    <tbody>${DISTRATOS.map(c=>`<tr onclick="openModal(${JSON.stringify(c).replace(/"/g,'&quot;')},'distrato')">
+      <td class="f13 fw6">${c.casal}</td>
+      <td><span class="f12 muted">${destFlag(c.destino)} ${c.destino}</span></td>
+      <td class="f12 muted">${c.convidados}</td>
+      <td>${plannerDot(c.responsavel)}</td>
+      <td class="f11 muted">${c.andamento}</td>
+    </tr>`).join("")}</tbody></table>
   </div>`;
 }
 
@@ -570,19 +586,10 @@ function renderProducao(){
   const urgentes=filtered.filter(c=>c.status==="urgente");
   const emAndamento=filtered.filter(c=>c.status==="em-andamento");
 
-  const hasAssessor=c=>c.assessor&&!["n/a","a definir","A DEFINIR","N/A","N/D","—"].includes(c.assessor);
-
   let html=`
   <div class="stat-grid g5">
-    ${[
-      {l:"Em produção",v:filtered.length,col:"#1a4fa8"},
-      {l:"Urgentes",v:urgentes.length,col:"#a81a1a"},
-      {l:"Em andamento",v:emAndamento.length,col:"#856404"},
-      {l:"Com assessor definido",v:filtered.filter(hasAssessor).length,col:"#1a6f4a"},
-      {l:"Sem fornecedores",v:filtered.filter(c=>!c.fornecedores||c.fornecedores.length===0).length,col:"#6f1aa8"},
-    ].map(s=>`<div class="stat-card"><div class="stat-label">${s.l}</div><div class="stat-val serif" style="color:${s.col}">${s.v}</div></div>`).join("")}
+    ${[{l:"Em produção",v:filtered.length,col:"#1a4fa8"},{l:"Urgentes",v:urgentes.length,col:"#a81a1a"},{l:"Em andamento",v:emAndamento.length,col:"#856404"},{l:"Com assessor",v:filtered.filter(hasAssessor).length,col:"#1a6f4a"},{l:"Sem fornecedores",v:filtered.filter(c=>!c.fornecedores||c.fornecedores.length===0).length,col:"#6f1aa8"}].map(s=>`<div class="stat-card"><div class="stat-label">${s.l}</div><div class="stat-val serif" style="color:${s.col}">${s.v}</div></div>`).join("")}
   </div>
-
   <div style="display:flex;gap:8px;margin-bottom:20px;align-items:center">
     <span class="f12 muted">Agrupar por:</span>
     ${["produtora","lista","urgentes"].map((g,i)=>{const labels=["Produtora","Lista completa","🚨 Urgentes primeiro"];return`<button class="filter-btn${groupBy===g?" active-dark":""}" onclick="setGroupBy('${g}')">${labels[i]}</button>`;}).join("")}
@@ -591,11 +598,10 @@ function renderProducao(){
   if(groupBy==="produtora"){
     const groups={};
     filtered.forEach(c=>{const k=c.produtora||"Sem produtora";if(!groups[k])groups[k]=[];groups[k].push(c);});
-    const sorted=Object.entries(groups).sort((a,b)=>b[1].length-a[1].length);
-
-    sorted.forEach(([prod,casais])=>{
+    Object.entries(groups).sort((a,b)=>b[1].length-a[1].length).forEach(([prod,casais])=>{
       const p=PLANNERS[prod]||{color:"#f0f0f0",text:"#888",initials:(prod||"?").slice(0,2).toUpperCase()};
       const urg=casais.filter(c=>c.status==="urgente").length;
+      const ds=casais[0]?.id>=100?'c27':'c26';
       html+=`<div style="margin-bottom:24px">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
           <div style="width:32px;height:32px;border-radius:50%;background:${p.color};color:${p.text};display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700">${p.initials}</div>
@@ -604,162 +610,126 @@ function renderProducao(){
           ${urg>0?`<span class="badge b-sm b-red">${urg} urgente${urg!==1?"s":""}</span>`:""}
         </div>
         <div class="table-card" style="margin-bottom:0">`;
-
       casais.forEach((c,idx)=>{
         const isExp=(expandedId===c.id);
-        html+=`
-          <div style="border-bottom:${idx<casais.length-1?".5px solid #f5f5f3":"none"}">
-            <div class="expand-row flex-center gap12" style="padding:13px 18px;background:${isExp?"#fafaf8":"transparent"}" onclick="toggleExpand(${c.id})">
-              ${dateBox(c.data)}
-              <div style="flex:1;min-width:0">
-                <div class="f13 fw6 flex-center gap8">${c.casal} ${fmtDias(c.data)}</div>
-                <div class="f11 lighter">${destFlag(c.destino)} ${c.destino} · ${c.local}${c.convidados>0?" · "+c.convidados+" convidados":""}</div>
-              </div>
-              <div style="font-size:11px;color:#aaa;text-align:center;min-width:100px">
-                <div style="font-size:10px;color:#ccc;margin-bottom:2px">Assessor local</div>
-                <div style="font-weight:500;color:${hasAssessor(c)?"#1a1a1a":"#ccc"}">${c.assessor||"—"}</div>
-              </div>
-              ${fornPills(c.fornecedores)}
-              ${statusBadge(c.status)}
-              <i class="ti ti-chevron-${isExp?"up":"down"}" style="font-size:14px;color:#ccc;flex-shrink:0"></i>
+        const cds=c.id>=100?'c27':'c26';
+        html+=`<div style="border-bottom:${idx<casais.length-1?".5px solid #f5f5f3":"none"}">
+          <div class="expand-row flex-center gap12" style="padding:13px 18px;background:${isExp?"#fafaf8":"transparent"}" onclick="handleProdRow(event,${c.id})">
+            ${dateBox(c.data)}
+            <div style="flex:1;min-width:0">
+              <div class="f13 fw6 flex-center gap8">${c.casal} ${fmtDias(c.data)}</div>
+              <div class="f11 lighter">${destFlag(c.destino)} ${c.destino} · ${c.local}${c.convidados>0?" · "+c.convidados+" convidados":""}</div>
             </div>
-            ${isExp?`<div class="expand-detail">
-              <div class="detail-grid">
-                <div><div class="detail-label">Em andamento</div><div class="f13" style="line-height:1.5">${c.andamento||"—"}</div></div>
-                <div><div class="detail-label">Eventos programados</div>${c.eventos&&c.eventos.length>0?c.eventos.map(e=>`<div class="f12 muted" style="margin-bottom:4px"><span style="color:#8b7355">•</span> ${e}</div>`).join(""):`<div class="f12 lighter">Nenhum evento registrado</div>`}</div>
-                <div><div class="detail-label">Fornecedores contratados</div>${c.fornecedores&&c.fornecedores.length>0?`<div style="display:flex;flex-wrap:wrap;gap:4px">${c.fornecedores.map(f=>`<span class="badge b-sm b-teal">${f}</span>`).join("")}</div>`:`<div class="f12" style="color:#a81a1a">⚠ Nenhum fornecedor cadastrado</div>`}</div>
-              </div>
-            </div>`:""}
-          </div>`;
+            <div style="font-size:11px;color:#aaa;text-align:center;min-width:100px">
+              <div style="font-size:10px;color:#ccc;margin-bottom:2px">Assessor local</div>
+              <div style="font-weight:500;color:${hasAssessor(c)?"#1a1a1a":"#ccc"}">${c.assessor||"—"}</div>
+            </div>
+            ${fornPills(c.fornecedores)}
+            ${statusBadge(c.status)}
+            <button onclick="event.stopPropagation();openModal(${JSON.stringify(c).replace(/"/g,'&quot;')},'${cds}')" style="background:#f5f5f3;border:none;border-radius:8px;padding:5px 10px;font-size:11px;color:#888;cursor:pointer;flex-shrink:0"><i class="ti ti-pencil"></i></button>
+            <i class="ti ti-chevron-${isExp?"up":"down"}" style="font-size:14px;color:#ccc;flex-shrink:0"></i>
+          </div>
+          ${isExp?`<div class="expand-detail">
+            <div class="detail-grid">
+              <div><div class="detail-label">Em andamento</div><div class="f13" style="line-height:1.5">${c.andamento||"—"}</div></div>
+              <div><div class="detail-label">Eventos programados</div>${c.eventos&&c.eventos.length>0?c.eventos.map(e=>`<div class="f12 muted" style="margin-bottom:4px"><span style="color:#8b7355">•</span> ${e}</div>`).join(""):`<div class="f12 lighter">Nenhum evento registrado</div>`}</div>
+              <div><div class="detail-label">Fornecedores contratados</div>${c.fornecedores&&c.fornecedores.length>0?`<div style="display:flex;flex-wrap:wrap;gap:4px">${c.fornecedores.map(f=>`<span class="badge b-sm b-teal">${f}</span>`).join("")}</div>`:`<div class="f12" style="color:#a81a1a">⚠ Nenhum fornecedor cadastrado</div>`}</div>
+            </div>
+          </div>`:""}
+        </div>`;
       });
       html+=`</div></div>`;
     });
-  }
-
-  else if(groupBy==="lista"){
-    html+=`<div class="table-card"><div class="tbl-scroll">
-    <table class="tbl">
-      <thead><tr><th>Data</th><th>Casal</th><th>Destino / Local</th><th>Produtora</th><th>Assessor local</th><th>Fornecedores</th><th>Status</th><th>Em andamento</th></tr></thead>
-      <tbody>
-        ${filtered.map(c=>`<tr>
-          <td class="f12 muted" style="white-space:nowrap">${c.data}<br>${fmtDias(c.data)}</td>
-          <td><div class="f13 fw6">${c.casal}</div>${c.convidados>0?`<div class="f11 lighter">${c.convidados} conv.</div>`:""}</td>
-          <td><span class="f12 muted">${destFlag(c.destino)} ${c.destino}</span><div class="f11 lighter">${c.local}</div></td>
-          <td>${plannerDot(c.produtora)}</td>
-          <td class="f12" style="color:${hasAssessor(c)?"#1a1a1a":"#ccc"}">${c.assessor||"—"}</td>
-          <td>${fornPills(c.fornecedores,3)}</td>
-          <td>${statusBadge(c.status)}</td>
-          <td class="f11 muted" style="max-width:180px"><div class="ellipsis">${c.andamento||""}</div></td>
-        </tr>`).join("")}
-      </tbody>
+  } else if(groupBy==="lista"){
+    html+=`<div class="table-card"><div class="tbl-scroll"><table class="tbl">
+      <thead><tr><th>Data</th><th>Casal</th><th>Destino / Local</th><th>Produtora</th><th>Assessor</th><th>Fornecedores</th><th>Status</th><th>Em andamento</th></tr></thead>
+      <tbody>${filtered.map(c=>{const cds=c.id>=100?'c27':'c26';return`<tr onclick="openModal(${JSON.stringify(c).replace(/"/g,'&quot;')},'${cds}')">
+        <td class="f12 muted" style="white-space:nowrap">${c.data}<br>${fmtDias(c.data)}</td>
+        <td><div class="f13 fw6">${c.casal}</div>${c.convidados>0?`<div class="f11 lighter">${c.convidados} conv.</div>`:""}</td>
+        <td><span class="f12 muted">${destFlag(c.destino)} ${c.destino}</span><div class="f11 lighter">${c.local}</div></td>
+        <td>${plannerDot(c.produtora)}</td>
+        <td class="f12" style="color:${hasAssessor(c)?"#1a1a1a":"#ccc"}">${c.assessor||"—"}</td>
+        <td>${fornPills(c.fornecedores,3)}</td>
+        <td>${statusBadge(c.status)}</td>
+        <td class="f11 muted" style="max-width:180px"><div class="ellipsis">${c.andamento||""}</div></td>
+      </tr>`;}).join("")}</tbody>
     </table></div></div>`;
-  }
-
-  else if(groupBy==="urgentes"){
+  } else {
     if(urgentes.length>0){
-      html+=`<div class="urgente-section">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
-          <span class="f13 fw7" style="color:#a81a1a">🚨 Urgentes — requerem ação imediata</span>
-          <span class="badge b-sm b-red">${urgentes.length}</span>
-        </div>
-        <div class="urgente-card">
-          ${urgentes.map((c,idx)=>`
-          <div class="urgente-row" style="border-bottom:${idx<urgentes.length-1?".5px solid #f5f5f3":"none"}">
-            ${dateBox(c.data,true)}
-            <div style="flex:1">
-              <div class="f13 fw7 mb4">${c.casal}</div>
-              <div class="f11 lighter mb8">${destFlag(c.destino)} ${c.destino} · ${c.local}</div>
-              <div class="f12 fw6" style="color:#a81a1a">⚠ ${c.andamento}</div>
-            </div>
-            ${plannerDot(c.produtora)}
-          </div>`).join("")}
-        </div>
+      html+=`<div style="margin-bottom:24px">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px"><span class="f13 fw7" style="color:#a81a1a">🚨 Urgentes</span><span class="badge b-sm b-red">${urgentes.length}</span></div>
+        <div class="urgente-card">${urgentes.map((c,idx)=>{const cds=c.id>=100?'c27':'c26';return`<div class="urgente-row" style="border-bottom:${idx<urgentes.length-1?".5px solid #f5f5f3":"none"};cursor:pointer" onclick="openModal(${JSON.stringify(c).replace(/"/g,'&quot;')},'${cds}')">
+          ${dateBox(c.data,true)}
+          <div style="flex:1"><div class="f13 fw7 mb4">${c.casal}</div><div class="f11 lighter mb8">${destFlag(c.destino)} ${c.destino} · ${c.local}</div><div class="f12 fw6" style="color:#a81a1a">⚠ ${c.andamento}</div></div>
+          ${plannerDot(c.produtora)}
+        </div>`;}).join("")}</div>
       </div>`;
     }
-
-    html+=`
-    <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
-      <span class="f13 fw7 muted">Em andamento</span>
-      <span class="badge b-sm b-amber">${emAndamento.length}</span>
-    </div>
-    <div class="table-card" style="margin-bottom:0">
-      ${emAndamento.map((c,idx)=>`
-      <div style="display:flex;gap:14px;padding:13px 18px;border-bottom:${idx<emAndamento.length-1?".5px solid #f5f5f3":"none"};align-items:center">
-        ${dateBox(c.data)}
-        <div style="flex:1;min-width:0">
-          <div class="f13 fw6">${c.casal}</div>
-          <div class="f11 lighter">${destFlag(c.destino)} ${c.destino} · ${c.local}</div>
-        </div>
-        <div class="f11 muted ellipsis" style="max-width:200px">${c.andamento||""}</div>
-        ${plannerDot(c.produtora)}
-        ${statusBadge(c.status)}
-      </div>`).join("")}
-    </div>`;
+    html+=`<div style="display:flex;align-items:center;gap:8px;margin-bottom:12px"><span class="f13 fw7 muted">Em andamento</span><span class="badge b-sm b-amber">${emAndamento.length}</span></div>
+    <div class="table-card" style="margin-bottom:0">${emAndamento.map((c,idx)=>{const cds=c.id>=100?'c27':'c26';return`<div style="display:flex;gap:14px;padding:13px 18px;border-bottom:${idx<emAndamento.length-1?".5px solid #f5f5f3":"none"};align-items:center;cursor:pointer" onclick="openModal(${JSON.stringify(c).replace(/"/g,'&quot;')},'${cds}')">
+      ${dateBox(c.data)}<div style="flex:1;min-width:0"><div class="f13 fw6">${c.casal}</div><div class="f11 lighter">${destFlag(c.destino)} ${c.destino} · ${c.local}</div></div>
+      <div class="f11 muted ellipsis" style="max-width:200px">${c.andamento||""}</div>${plannerDot(c.produtora)}${statusBadge(c.status)}
+    </div>`;}).join("")}</div>`;
   }
-
   return html;
 }
 
 // ─── CONTROLLER ──────────────────────────────────────────────────────────────
-const TITLES={dashboard:"Visão geral",producao:"Produção","casamentos-2026":"Casamentos 2026","casamentos-2027":"Casamentos 2027",planejamento:"Planejamento & Distratos"};
+const TITLES={dashboard:"Visão geral","casamentos-2026":"Casamentos 2026","casamentos-2027":"Casamentos 2027",planejamento:"Planejamento & Distratos",producao:"Produção"};
 
 function render(){
   const el=document.getElementById("content");
   if(currentView==="dashboard") el.innerHTML=renderDashboard();
-  else if(currentView==="producao") el.innerHTML=renderProducao();
-  else if(currentView==="casamentos-2026") el.innerHTML=renderCasamentos(C26,2026);
-  else if(currentView==="casamentos-2027") el.innerHTML=renderCasamentos(C27,2027);
+  else if(currentView==="casamentos-2026") el.innerHTML=renderCasamentos(C26,2026,'c26');
+  else if(currentView==="casamentos-2027") el.innerHTML=renderCasamentos(C27,2027,'c27');
   else if(currentView==="planejamento") el.innerHTML=renderPlanejamento();
+  else if(currentView==="producao") el.innerHTML=renderProducao();
 }
 
-function setView(v){
-  currentView=v;
-  statusFilter="todos";
-  destinoFilter="todos";
-  expandedId=null;
+function setView(v, btn){
+  currentView=v; statusFilter='todos'; destinoFilter='todos'; expandedId=null;
   document.getElementById("page-title").textContent=TITLES[v];
   document.querySelectorAll(".nav-btn").forEach(b=>b.classList.remove("active"));
-  event.currentTarget.classList.add("active");
+  btn.classList.add("active");
   const hasFilt=v!=="dashboard";
   document.getElementById("filterbar").classList.toggle("hidden",!hasFilt);
-  document.getElementById("search-area").style.display=hasFilt?"block":"none";
+  document.getElementById("search-area").classList.toggle("hidden",!hasFilt);
   if(document.getElementById("search-input")) document.getElementById("search-input").value="";
-  document.querySelectorAll("[data-status]").forEach(b=>{b.classList.remove("active-dark");if(b.dataset.status==="todos")b.classList.add("active-dark");});
-  document.querySelectorAll("[data-dest]").forEach(b=>{b.classList.remove("active-gold");if(b.dataset.dest==="todos")b.classList.add("active-gold");});
+  document.querySelectorAll("[onclick*='setStatusFilter']").forEach(b=>{b.classList.remove("active-dark");if(b.textContent==="Todos")b.classList.add("active-dark");});
+  document.querySelectorAll("[onclick*='setDestinoFilter']").forEach(b=>{b.classList.remove("active-gold");if(b.textContent==="Todos")b.classList.add("active-gold");});
   render();
 }
 
 function setStatusFilter(btn,val){
   statusFilter=val;
-  document.querySelectorAll("[data-status]").forEach(b=>b.classList.remove("active-dark"));
+  document.querySelectorAll("[onclick*='setStatusFilter']").forEach(b=>b.classList.remove("active-dark"));
   btn.classList.add("active-dark");
   render();
 }
 
 function setDestinoFilter(btn,val){
   destinoFilter=val;
-  document.querySelectorAll("[data-dest]").forEach(b=>b.classList.remove("active-gold"));
+  document.querySelectorAll("[onclick*='setDestinoFilter']").forEach(b=>b.classList.remove("active-gold"));
   btn.classList.add("active-gold");
   render();
 }
 
-function setGroupBy(g){
-  groupBy=g;
-  render();
-}
+function setGroupBy(g){ groupBy=g; render(); }
 
-function applyFilters(){ render(); }
-
-function toggleExpand(id){
+function handleProdRow(event, id){
   expandedId=(expandedId===id?null:id);
   render();
 }
 
-// ─── INIT ─────────────────────────────────────────────────────────────────────
-document.getElementById("cnt-producao").textContent=[...C26,...C27].filter(c=>c.status!=="finalizado").length;
-document.getElementById("cnt-2026").textContent=C26.length;
-document.getElementById("cnt-2027").textContent=C27.length;
-document.getElementById("cnt-plan").textContent=PLAN.length;
+function updateCounts(){
+  document.getElementById("cnt-2026").textContent=C26.length;
+  document.getElementById("cnt-2027").textContent=C27.length;
+  document.getElementById("cnt-plan").textContent=PLAN.length;
+  document.getElementById("cnt-producao").textContent=[...C26,...C27].filter(c=>c.status!=="finalizado").length;
+}
+
+// INIT
+updateCounts();
 render();
 </script>
 </body>
